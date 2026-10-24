@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:scholar_chat/pages/register_page.dart';
 import 'package:scholar_chat/widgets/custom_button.dart';
 import 'package:scholar_chat/widgets/custom_text_field.dart';
 
@@ -56,7 +57,9 @@ class LoginPage extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            CustomButton(),
+            CustomButton(
+              text: 'LOGIN',
+            ),
             SizedBox(
               height: 10,
             ),
@@ -69,10 +72,15 @@ class LoginPage extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                Text(
-                  ' Register',
-                  style: TextStyle(
-                    color: Color(0xffC7EDE6),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'RegisterPage');
+                  },
+                  child: Text(
+                    ' Register',
+                    style: TextStyle(
+                      color: Color(0xffC7EDE6),
+                    ),
                   ),
                 ),
               ],
