@@ -1,35 +1,50 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:scholar_chat/constant.dart';
 import 'package:scholar_chat/pages/register_page.dart';
 import 'package:scholar_chat/widgets/custom_button.dart';
 import 'package:scholar_chat/widgets/custom_text_field.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
+  static String id = 'loginPage';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff2B475E),
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 8,
         ),
-        child: Column(
+        child: ListView(
           children: [
-            Spacer(
+            /*Spacer(
               flex: 2,
+            ),*/
+            SizedBox(
+              height: 75,
             ),
             Image.asset(
               'assets/images/scholar.png',
+              height: 100,
             ),
-            Text(
-              'Scholar Chat',
-              style: TextStyle(
-                  fontSize: 32, color: Colors.white, fontFamily: 'Pacifico'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Scholar Chat',
+                  style: TextStyle(
+                      fontSize: 32,
+                      color: Colors.white,
+                      fontFamily: 'Pacifico'),
+                ),
+              ],
             ),
-            Spacer(
+            /*Spacer(
               flex: 2,
+            ),*/
+            SizedBox(
+              height: 75,
             ),
             Row(
               children: [
@@ -74,7 +89,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, 'RegisterPage');
+                    Navigator.pushNamed(context, RegisterPage.id);
                   },
                   child: Text(
                     ' Register',
@@ -85,9 +100,9 @@ class LoginPage extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(
+            /*Spacer(
               flex: 3,
-            )
+            ),*/
           ],
         ),
       ),
